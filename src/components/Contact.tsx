@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
                 {/* Social Links */}
                 <div className="flex justify-center gap-8">
                     <a
-                        href="https://github.com/sandip-deshmukh"
+                        href="https://github.com/sandipdeshmukh77"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-400 hover:text-blue-600 transition"
@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
                         <Linkedin size={36} />
                     </a>
                     <a
-                        href="mailto:sandip@example.com"
+                        href="mailto:sandipdeshmukh77@gmail.com"
                         className="text-blue-400 hover:text-blue-600 transition"
                     >
                         <Mail size={36} />

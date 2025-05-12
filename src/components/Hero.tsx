@@ -5,7 +5,7 @@ const Hero: React.FC = () => {
     return (
         <section
             id="home"
-            className="bg-[hsl(240_5.9%_10%)] text-white min-h-screen flex items-center justify-center px-4"
+            className=" text-white min-h-screen flex items-center justify-center px-4"
         >
             <div className="max-w-3xl text-center">
                 {/* Greeting and name */}
@@ -25,11 +25,12 @@ const Hero: React.FC = () => {
 
                 {/* Call-to-action button */}
                 <a
-                    href="#projects"
+                    href="/projects"
                     className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 transition rounded-md text-white font-semibold"
                 >
                     View My Work
                 </a>
+
             </div>
         </section>
     );

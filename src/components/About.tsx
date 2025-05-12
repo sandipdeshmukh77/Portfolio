@@ -26,7 +26,7 @@ const About: React.FC = () => {
                         <Code size={36} className="mx-auto text-blue-400 mb-4" />
                         <h3 className="text-xl font-semibold text-gray-200">Tech Stack</h3>
                         <p className="text-gray-400 mt-2">
-                            React, Node.js, Express, MongoDB, Tailwind CSS, Azure, Firebase
+                            Javascript, React, Node.js, Express, graphql, MongoDB, Tailwind CSS, Azure Cloud.
                         </p>
                     </div>
 
@@ -35,7 +35,7 @@ const About: React.FC = () => {
                         <Briefcase size={36} className="mx-auto text-blue-400 mb-4" />
                         <h3 className="text-xl font-semibold text-gray-200">Experience</h3>
                         <p className="text-gray-400 mt-2">
-                            3+ years of experience in full-stack development, working on enterprise-level applications.
+                            4+ years of experience in full-stack development, working on enterprise-level applications.
                         </p>
                     </div>
                 </div>
