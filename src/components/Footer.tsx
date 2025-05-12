@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
 
                     {/* LinkedIn */}
                     <a
-                        href="https://linkedin.com/in/yourusername"
+                        href="https://www.linkedin.com/in/sandip-deshmukh-754b67205/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center space-x-1 hover:text-white transition-colors"
