@@ -29,6 +29,27 @@ const projects: Project[] = [
             "Built a fully immersive VR-based e-commerce experience for a client using Meta Oculus VR, supporting mall navigation and checkout functionality.",
         category: 'work'
     },
+    {
+        title: "RAG-Based Chatbot",
+        description:
+            "Built a Python chatbot using RAG architecture with OpenAI API and Qdrant to enable context-aware Q&A over indexed documents.",
+        githubUrl: "https://github.com/sandipdeshmukh77/RAG",
+        category: 'personal'
+    },
+    {
+        title: "Persona-based Chatbot (React)",
+        description:
+            "A React app offering real-time chat with multiple AI personas. Each persona delivers responses in a distinct tone and style.",
+        githubUrl: "https://github.com/sandipdeshmukh77/persona-chatbot",
+        category: 'personal'
+    },
+    {
+        title: "AI Coding Agent",
+        description:
+            "Python-based AI coding assistant that plans, acts, observes, and writes code for full-stack apps using Gemini API and built-in tools.",
+        githubUrl: "https://github.com/sandipdeshmukh77/coding-agent",
+        category: 'personal'
+    }
 ];
 
 // Card animation variant remains the same
@@ -56,51 +77,54 @@ const Projects: React.FC = () => {
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
-                            className="bg-[hsl(240_5.9%_10%)] p-6 rounded-2xl shadow-xl transition-transform hover:scale-105 hover:shadow-blue-500/20 text-left"
+                            className="bg-[hsl(240_5.9%_10%)] p-6 rounded-2xl shadow-xl transition-transform hover:scale-105 hover:shadow-blue-500/20 text-left flex flex-col justify-between"
                             variants={cardVariants}
                             initial="hidden"
                             animate="visible"
                             custom={index}
                         >
-                            <h3 className="text-xl font-semibold text-blue-400 mb-3">{project.title}</h3>
+                            <div>
+                                <h3 className="text-xl font-semibold text-blue-400 mb-3">{project.title}</h3>
 
-                            {/* Badge for work */}
+                                {/* Badge for work */}
 
-                            <span className="inline-block bg-blue-900/30 text-blue-300 text-xs font-medium px-2 py-1 rounded mb-2">
-                                {project.category === 'work' ? 'Work for Organization' : 'Personal'}
-                            </span>
+                                <span className="inline-block bg-blue-900/30 text-blue-300 text-xs font-medium px-2 py-1 rounded mb-2">
+                                    {project.category === 'work' ? 'Work for Organization' : 'Personal'}
+                                </span>
 
 
 
-                            <p className="text-gray-400 mb-5">{project.description}</p>
-
-                            {/* Show GitHub/Live only for personal projects */}
-                            {project.category === 'personal' && (
-                                <div className="flex gap-5 items-center">
-                                    {project.githubUrl && (
-                                        <a
-                                            href={project.githubUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-blue-400 hover:text-white transition-transform hover:scale-110"
-                                            title="GitHub Repo"
-                                        >
-                                            <Github className="w-5 h-5" />
-                                        </a>
-                                    )}
-                                    {project.liveUrl && (
-                                        <a
-                                            href={project.liveUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-blue-400 hover:text-white transition-transform hover:scale-110"
-                                            title="Live Demo"
-                                        >
-                                            <ExternalLink className="w-5 h-5" />
-                                        </a>
-                                    )}
-                                </div>
-                            )}
+                                <p className="text-gray-400 mb-5">{project.description}</p>
+                            </div>
+                            <div>
+                                {/* Show GitHub/Live only for personal projects */}
+                                {project.category === 'personal' && (
+                                    <div className="flex gap-5 items-center">
+                                        {project.githubUrl && (
+                                            <a
+                                                href={project.githubUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-blue-400 hover:text-white transition-transform hover:scale-110"
+                                                title="GitHub Repo"
+                                            >
+                                                <Github className="w-5 h-5" />
+                                            </a>
+                                        )}
+                                        {project.liveUrl && (
+                                            <a
+                                                href={project.liveUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-blue-400 hover:text-white transition-transform hover:scale-110"
+                                                title="Live Demo"
+                                            >
+                                                <ExternalLink className="w-5 h-5" />
+                                            </a>
+                                        )}
+                                    </div>
+                                )}
+                            </div>
                         </motion.div>
                     ))}
 
