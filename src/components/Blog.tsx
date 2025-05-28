@@ -1,5 +1,8 @@
+// Blog.tsx
 import React from "react";
 import { motion } from "framer-motion";
+import data from "../data/DB";
+import type { BlogEntry } from "../data/DB";
 
 type BlogPost = {
     title: string;
@@ -8,10 +11,13 @@ type BlogPost = {
     link: string;
 };
 
-const posts: BlogPost[] = [
-];
+const posts: BlogPost[] = data.blogs.map((blog: BlogEntry) => ({
+    title: blog.title,
+    summary: blog.content.slice(0, 150) + "...",
+    date: blog.date,
+    link: blog.link || "#",
+}));
 
-// Animation variants
 const cardVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
@@ -27,7 +33,10 @@ const cardVariants = {
 
 const Blog: React.FC = () => {
     return (
-        <section id="blog" className="bg-[hsl(240_10%_3.9%)] text-white py-20 px-4">
+        <section
+            id="blog"
+            className="bg-[hsl(240_10%_3.9%)] text-white py-20 px-4"
+        >
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
                     Blog & Tutorials
@@ -40,23 +49,55 @@ const Blog: React.FC = () => {
                 ) : (
                     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {posts.map((post, idx) => (
-                            <motion.a
+                            <motion.div
                                 key={idx}
-                                href={post.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="block bg-[hsl(240_5.9%_10%)] p-6 rounded-2xl shadow-lg hover:shadow-blue-500/20 transition-transform hover:scale-[1.03]"
                                 initial="hidden"
                                 animate="visible"
                                 variants={cardVariants}
                                 custom={idx}
                             >
-                                <h3 className="text-lg font-semibold text-blue-400 mb-2">
-                                    {post.title}
-                                </h3>
-                                <p className="text-sm text-gray-400 mb-2">{post.date}</p>
-                                <p className="text-sm text-gray-300 leading-relaxed">{post.summary}</p>
-                            </motion.a>
+                                <a
+                                    href={post.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block bg-[hsl(240_5.9%_10%)] p-6 rounded-2xl shadow-lg hover:shadow-blue-500/20 transition-transform hover:scale-[1.03] h-full relative"
+                                >
+                                    {/* External link icon at top right */}
+                                    <span
+                                        className="absolute top-4 right-4 text-blue-400"
+                                        title="External link"
+                                        aria-label="External link"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="22"
+                                            height="22"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            strokeWidth={2}
+                                            className="inline-block align-text-bottom"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m5-3h3m0 0v3m0-3L10 14"
+                                            />
+                                        </svg>
+                                    </span>
+                                    <div className="flex items-center mb-2">
+                                        <h3 className="text-lg font-semibold text-blue-400">
+                                            {post.title}
+                                        </h3>
+                                    </div>
+                                    <p className="text-sm text-gray-400 mb-2">
+                                        {post.date}
+                                    </p>
+                                    <p className="text-sm text-gray-300 leading-relaxed">
+                                        {post.summary}
+                                    </p>
+                                </a>
+                            </motion.div>
                         ))}
                     </div>
                 )}
