@@ -1,13 +1,62 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react"; // ✅ Lucide icon
+import { CheckCircle } from "lucide-react";
 
-const skills = {
-    "Frontend": ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "HTML5", "CSS3"],
+const skills: Record<string, string[]> = {
+    "Programming": ["JavaScript", "Python"],
+    "LLM Models": [
+        "OpenAI's GPT",
+        "DeepSeek",
+        "Claude",
+        "Gemini",
+        "LLaMA-3",
+    ],
+    "AI & Tools": [
+        "OpenAI API",
+        "Azure AI",
+        "Custom Neural Voice",
+        "Langchain",
+        "LangGraph",
+        "Photoshop API",
+    ],
+    "Frameworks": [
+        "LangChain",
+        "LangGraph",
+        "LangSmit",
+    ],
+    "Frontend": [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "HTML5",
+        "CSS3",
+    ],
     "Backend & API": ["Node.js", "Express.js", "REST APIs", "GraphQL"],
+    "Databases": ["MongoDB", "Cosmos DB"],
+    "Dev Tools": ["Git", "Docker", "CI/CD"],
     "Cloud & DevOps": ["Azure", "Azure Functions", "Azure DevOps", "GitHub Actions"],
-    "AI & Tools": ["OpenAI API", "Azure AI", "Custom Neural Voice", "Photoshop API"],
+    "Tracing & Monitoring": ["Langfuse"],
+    "Memory & Vector Stores": [
+        "Azure AI Search ",
+        "Qdrant DB",
+        "Vector Embedding Models",
+    ],
+    "Infrastructure": [
+        "MCP Server",
+        "Neo4j Graph DB",
+        "Azure (Cloud Deployment)",
+        "Docker",
+    ],
     "VR / 3D": ["Meta Quest (Oculus)"],
+    "Knowledge Areas": [
+        "Building and managing AI agent workflows",
+        "Self-hosted tracing for AI applications",
+        "Efficient vector store implementation",
+        "Graph-based knowledge representation",
+        "Deploying and optimizing AI solutions in the cloud",
+        "Structuring vector embeddings to improve AI understanding",
+    ],
 };
 
 const cardVariants = {
