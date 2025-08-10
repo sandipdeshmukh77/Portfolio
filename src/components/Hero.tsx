@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
 
                 {/* Short description */}
                 <p className="text-md text-gray-500 mb-8">
-                    Versatile and innovative Senior Software Engineer with over three years of experience in full-stack web development and advanced multimedia applications.
+                    Accomplished Senior Software Engineer with 4+ years of expertise in full-stack web development and advanced AI solutions, delivering high-quality, scalable applications for diverse business needs.
                 </p>
 
                 {/* Call-to-action button */}

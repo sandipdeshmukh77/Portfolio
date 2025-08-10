@@ -62,9 +62,9 @@ const Blog: React.FC = () => {
                                     rel="noopener noreferrer"
                                     className="block bg-[hsl(240_5.9%_10%)] p-6 rounded-2xl shadow-lg hover:shadow-blue-500/20 transition-transform hover:scale-[1.03] h-full relative"
                                 >
-                                    {/* External link icon at top right */}
+                                    {/* External link icon at bottom right */}
                                     <span
-                                        className="absolute top-4 right-4 text-blue-400"
+                                        className="absolute bottom-2 right-2 text-blue-400"
                                         title="External link"
                                         aria-label="External link"
                                     >
